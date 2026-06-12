@@ -34,7 +34,11 @@ h1 span {
 }
 
 
-.box {
+.box,
+.box1,
+.box2,
+.box3,
+.box4 {
   height: 120px;
   width: 300px;
   background-color: rgb(60, 60, 41);

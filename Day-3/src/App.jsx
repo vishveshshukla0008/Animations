@@ -4,39 +4,54 @@ import "./App.css";
 const App = () => {
   useGSAP(() => {
     // gsap.to(".box", {
-    //   x: 900,
-    //   // duration: 1,
-    //   stagger: {
-    //     each: 0.2,
-    //     from: "random",
-    //   },
+    //   x: 200,
+    //   duration: 2,
+    // });
+    // gsap.to(".box2", {
+    //   x: 200,
+    //   duration: 2,
+    //   delay: 2,
+    // });
+    // gsap.to(".box3", {
+    //   x: 200,
+    //   duration: 2,
+    //   delay: 4,
     // });
 
-    gsap.from("h1 span", {
-      yPercent: 100,
-      opacity: 0,
-      duration: 1.5,
-      ease: "expo.out",
-      stagger: {
-        each: 0.1,
-        from: "edges",
-      },
-    });
+    const tl = gsap.timeline();
+
+    tl.to(".box", {
+      x: 200,
+      // duration: 2,
+      delay: 2,
+    })
+      .to(
+        ".box2",
+        {
+          x: 300,
+          duration: 1.3,
+        },
+        "yash",
+      )
+      .to(
+        ".box3",
+        {
+          x: 300,
+          // duration: 1.3,
+        },
+        "yash",
+      )
+      .to(".box4", {
+        x: 300,
+        // duration: 1.3,
+      });
   }, []);
   return (
     <div className="outer">
-      <div className="heading">
-        <h1>
-          <span>V</span>
-          <span>I</span>
-          <span>S</span>
-          <span>H</span>
-          <span>W</span>
-          <span>E</span>
-          <span>S</span>
-          <span>H</span>
-        </h1>
-      </div>
+      <div className="box"></div>
+      <div className="box2"></div>
+      <div className="box3"></div>
+      <div className="box4"></div>
     </div>
   );
 };
