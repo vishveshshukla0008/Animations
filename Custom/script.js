@@ -1,57 +1,66 @@
-let h1 = document.querySelector("h1");
-let count = 0;
+const play = document.querySelector(".play");
+const pause = document.querySelector(".pause");
+const restart = document.querySelector(".restart");
+const reverse = document.querySelector(".reverse");
+const seek = document.querySelector(".seek");
 
-let timer = setInterval(() => {
-  count++;
-  h1.innerHTML = `${count}%`;
-  if (count == 100) {
-    clearInterval(timer);
-    startAnimation();
-  }
-}, 10);
+const tl = gsap.timeline({ paused: true });
 
-function startAnimation() {
-  const tl = gsap.timeline();
-
-  tl.to(h1, {
-    opacity: 0,
-    duration: 0.75,
+tl.to(".box", {
+  x: 400,
+  duration: 1,
+  delay: 0.6,
+  ease: "power3.inOut",
+})
+  .to(".box1", {
+    x: 400,
+    duration: 1,
+    ease: "power3.inOut",
   })
-    .to(
-      ".black-screen",
-      {
-        yPercent: -100,
-        ease: "power3.in",
-      },
-      "-=0.3",
-    )
-    .from(
-      "img",
-      {
-        scale: 1.25,
-        duration: 1.2,
-        ease: "expo.out",
-      },
-      "+=0.1",
-    )
-    .from(
-      ".h1 span",
-      {
-        yPercent: 300,
-        opacity: 0,
-        ease: "power2.inOut",
-        stagger: 0.1,
-      },
-      "-=1",
-    )
-    .from(
-      ".h2 span",
-      {
-        opacity: 0,
-        yPercent: 100,
-        stagger: 0.05,
-        ease: "power3.out",
-      },
-      "-=0.6",
-    );
-}
+  .to(".box2", {
+    x: 400,
+    duration: 1,
+    ease: "power3.inOut",
+  })
+  .addLabel("yash")
+  .to(".box3", {
+    x: 400,
+    duration: 1,
+    ease: "power3.inOut",
+  })
+  .to(".box4", {
+    x: 400,
+    duration: 1,
+    ease: "power3.inOut",
+  });
+
+play.addEventListener("click", () => {
+  tl.play();
+});
+
+pause.addEventListener("click", () => {
+  tl.pause();
+});
+
+restart.addEventListener("click", () => {
+  tl.restart();
+});
+
+reverse.addEventListener("click", () => {
+  tl.reverse();
+});
+
+seek.addEventListener("click", () => {
+  tl.seek("yash");
+});
+
+const firstTimeLine = () => {
+  return gsap.timeline();
+};
+
+const secondTimeLine = () => {
+  return gsap.timeline();
+};
+
+const master = gsap.timeline();
+master.add(firstTimeLine, "-=0.4").add(secondTimeLine);
