@@ -8,55 +8,48 @@ html,
 body {
     height: 100%;
     width: 100%;
+    background-color: black;
+    color: white;
 }
 
 .outer {
     height: 100%;
     width: 100%;
-    overflow: hidden;
-    background-color: black;
-    color: white;
 }
 
-.boxes {
-    /* height: 100%; */
+.outer .page {
+    height: 100%;
     width: 100%;
 }
 
-.box {
-    height: 100px;
-    width: 100px;
-    background-color: red;
+.page-2 {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    /* align-items: center; */
+    background-color: rgb(39, 38, 38);
 }
 
-.box1 {
-    height: 100px;
-    width: 100px;
-    background-color: rgb(77, 255, 0);
+.page-2 .image-div {
+    height: inherit;
+    width: inherit;
 }
 
-.box2 {
-    height: 100px;
-    width: 100px;
-    background-color: rgb(6, 68, 255);
+.page-2 .image-div img {
+    object-fit: cover;
+    height: 100%;
+    width: 100%;
 }
 
-.box3 {
-    height: 100px;
-    width: 100px;
-    background-color: rgb(106, 0, 0);
-}
-.box4 {
-    height: 100px;
-    width: 100px;
-    background-color: rgb(225, 0, 255);
-}
 
-button {
-    font-size: 2rem;
-    color: white;
-    background-color: cadetblue;
-    border: none;
-    border-radius: 1rem;
-    padding: 1rem 1.5rem;
+/* content styling */
+
+.page-2 .content {
+    top: 50%;
+    position: absolute;
+    z-index: 4;
+    font-size: 5rem;
+    font-weight: 900;
+    display: flex;
+    justify-content: center;
 }
