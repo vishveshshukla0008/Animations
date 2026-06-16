@@ -18,14 +18,36 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    overflow: hidden;
+    /* overflow: hidden; */
     background-color: gray;
+    gap: 3rem2;
 }
 
-.outer .box {
-    height: 200px;
-    width: 200px;
+.outer .imageGallery {
+    height: 30%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.imageGallery img {
+    height: 10rem;
+    object-fit: cover;
+}
+
+.imageShow {
+    height: 70%;
+    width: 100%;
     background-color: red;
-    border-radius: 1rem;
-    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.imageShow img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
 }
