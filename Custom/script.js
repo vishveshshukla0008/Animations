@@ -1,18 +1,13 @@
-gsap.registerPlugin(ScrollTrigger, SplitText);
+Draggable.create(".box", {
+  //   bounds: {
+  //     maxX: 100,
+  //     minX: 20,
+  //     maxY: 80,
+  //     minY: 40,
+  //   },
 
-const split = new SplitText(".title", {
-  type: "chars,words,lines",
-  wordsClass: "titleWord",
-  charsClass: "titleChars",
-});
-
-gsap.from(split.chars, {
-  yPercent: 100,
-  opacity: 0,
-  duration: 1.2,
-  ease: "expo.out",
-  stagger: {
-    each: 0.05,
-    from: "edges",
-  },
+  bounds: ".outer",
+  edgeResistance: 1,
+  inertia: true,
+  dragResistance: 0.5,
 });
