@@ -15,41 +15,19 @@ body {
 .outer {
     height: 100%;
     width: 100%;
-}
-
-.outer .page {
-    height: 100%;
-    width: 100%;
-}
-
-.page-2 {
-    position: relative;
     display: flex;
     justify-content: center;
-    /* align-items: center; */
-    background-color: rgb(39, 38, 38);
+    align-items: center;
 }
 
-.page-2 .image-div {
-    height: inherit;
-    width: inherit;
+.titleWord, .titleChars {
+    overflow: hidden;
 }
 
-.page-2 .image-div img {
-    object-fit: cover;
-    height: 100%;
-    width: 100%;
-}
-
-
-/* content styling */
-
-.page-2 .content {
-    top: 50%;
-    position: absolute;
-    z-index: 4;
-    font-size: 5rem;
-    font-weight: 900;
-    display: flex;
-    justify-content: center;
+.outer .title {
+    /* display: inline-block; */
+    font-size: 14rem;
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: 300;
+    text-transform: uppercase;
 }

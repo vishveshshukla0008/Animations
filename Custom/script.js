@@ -1,28 +1,18 @@
-gsap.set(".image-div", {
-  scale: 0.25,
+gsap.registerPlugin(ScrollTrigger, SplitText);
+
+const split = new SplitText(".title", {
+  type: "chars,words,lines",
+  wordsClass: "titleWord",
+  charsClass: "titleChars",
 });
 
-gsap.set(".content", {
-  gap: "70rem",
-});
-
-const tl = gsap.timeline({
-  scrollTrigger: {
-    trigger: ".image-div",
-    start: "top 50%",
-    end: "top 40%",
-    scrub: true,
+gsap.from(split.chars, {
+  yPercent: 100,
+  opacity: 0,
+  duration: 1.2,
+  ease: "expo.out",
+  stagger: {
+    each: 0.05,
+    from: "edges",
   },
 });
-
-tl.to(".image-div", {
-  scale: 1,
-  ease: "power1.out",
-}).to(
-  ".content",
-  {
-    gap: "5rem",
-    ease: "expo.in",
-  },
-  "-0.25",
-);
