@@ -1,7 +1,17 @@
-import React from "react";
+import "./App.scss";
+import AnimateOnX from "./components/AnimateOnX";
 
 const App = () => {
-  return <div>App</div>;
+  return (
+    <div className="outer">
+      <AnimateOnX>
+        <div className="box"></div>
+      </AnimateOnX>
+      <AnimateOnX>
+        <button>dabao mujhe</button>
+      </AnimateOnX>
+    </div>
+  );
 };
 
 export default App;

@@ -1,0 +1,17 @@
+.outer {
+  height: 100%;
+  width: 100%;
+  background-color: rgb(35, 35, 35);
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .box {
+    height: 200px;
+    width: 200px;
+    border-radius: 1rem;
+    cursor: pointer;
+    background-color: aqua;
+  }
+}
