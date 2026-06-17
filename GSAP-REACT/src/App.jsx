@@ -14,10 +14,11 @@ const App = () => {
       <div className="page"></div>
       <div className="page page2">
         <motion.div
-          initial={boxVariant.hidden}
+        variants={boxVariant}
+          initial={"hidden"}
           transition={{ duration: 6, ease: "easeOut", mass: 5 }}
           viewport={{ once: false, amount: 0.25 }}
-          whileHover={boxVariant.visible}
+          whileHover={"visible"}
           whileInView={{ opacity: 1 }}
           whileFocus={{ backgroundColor: "red" }}
           className="box"></motion.div>
