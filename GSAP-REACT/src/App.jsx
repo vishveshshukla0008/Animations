@@ -14,7 +14,7 @@ const App = () => {
       <div className="page"></div>
       <div className="page page2">
         <motion.div
-        variants={boxVariant}
+          variants={boxVariant}
           initial={"hidden"}
           transition={{ duration: 6, ease: "easeOut", mass: 5 }}
           viewport={{ once: false, amount: 0.25 }}
